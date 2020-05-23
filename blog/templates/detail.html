@@ -17,7 +17,7 @@
               <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'new' %}">글쓰기</a>
+              <a class="nav-link" href="#">Link</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -37,16 +37,15 @@
           </form>
         </div>
     </nav>
-    <br><br>
-    {%for blog in powerblog.all%}
+    <div class="container">
+      <br>
+      <h2> 자세한 본문 내용입니다 </h2>
+      <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <div class="card bg-light mb-3" style="max-width: 18rem;">
-                <div class="card-header">date  |  {{blog.pub_date}}</div>
-                <div class="card-body">
-                  <h5 class="card-title">{{blog.title}}</h5>
-                  <p class="card-text">본문 미리보기 : {{blog.summary}}<a href="{%url 'detail' blog.id%}">...more</a></p>
-                </div>
-              </div>
+          <h2 class="display-6">제목 : {{blog.title}}</h2>
+          <p class="lead">작성 날짜 : {{blog.pub_date}}</p>
+          <p class="lead">본문 : {{blog.body}}</p>
         </div>
-    {%endfor%}
+      </div>
+    </div>
 </body>
